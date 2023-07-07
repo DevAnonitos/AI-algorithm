@@ -22,6 +22,9 @@ randomByteArr = bytearray(os.urandom(300000))
 flatNumpyArr = numpy.array(randomByteArr)
 
 grayImage = flatNumpyArr.reshape(500, 600)
+blurImage = cv2.GaussianBlur(grayImage, (5,5), 0)
 
 
 cv2.imwrite('D:/2-bai tap cua dev/PythonAI/AI/DL/OpenCV/Module1/img/imgConvert.png', grayImage)
+
+cv2.imwrite('D:/2-bai tap cua dev/PythonAI/AI/DL/OpenCV/Module1/img/blur_gray_image.png', blurImage)
