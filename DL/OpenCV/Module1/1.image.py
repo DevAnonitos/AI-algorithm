@@ -1,4 +1,6 @@
 import cv2
+import os
+import numpy
 
 img = cv2.imread('D:/2-bai tap cua dev/PythonAI/AI/DL/OpenCV/Module1/img/img1.jpg')
 
@@ -14,3 +16,12 @@ else:
     cv2.waitKey(0)
 
     cv2.destroyAllWindows()
+
+# Handle RandomByte
+randomByteArr = bytearray(os.urandom(300000))
+flatNumpyArr = numpy.array(randomByteArr)
+
+grayImage = flatNumpyArr.reshape(500, 600)
+
+
+cv2.imwrite('D:/2-bai tap cua dev/PythonAI/AI/DL/OpenCV/Module1/img/imgConvert.png', grayImage)
