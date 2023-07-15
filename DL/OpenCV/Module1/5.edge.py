@@ -21,6 +21,6 @@ dst = cv.warpPerspective(Img,M,(cols,rows))
 # M = cv.getRotationMatrix2D(((cols-1)/2.0,(rows-1)/2.0),90,1)
 # dst = cv.warpAffine(Img,M,(cols,rows))
 
-cv.imshow("test", dst)
+cv.imshow("test", edges)
 cv.waitKey(0)
 cv.destroyAllWindows()
