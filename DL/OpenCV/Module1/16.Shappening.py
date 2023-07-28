@@ -13,13 +13,13 @@ width = 800
 
 resizeImage = cv.resize(img, (height, width))
 
-img_yuv = cv.cvtColor(img, cv.COLOR_BGR2YUV)
+# img_yuv = cv.cvtColor(img, cv.COLOR_BGR2YUV)
 
-img_yuv[:, :, 0] = cv.equalizeHist(img_yuv[:, :, 0])
+# img_yuv[:, :, 0] = cv.equalizeHist(img_yuv[:, :, 0])
 
-imgOutput = cv.cvtColor(img_yuv, cv.COLOR_YUV2BGR)
+# imgOutput = cv.cvtColor(img_yuv, cv.COLOR_YUV2BGR)
 
-histoImage = cv.equalizeHist(resizeImage)
+# histoImage = cv.equalizeHist(resizeImage)
 
 # Handle Shape
 # kernel_1 = np.array([
@@ -32,11 +32,17 @@ histoImage = cv.equalizeHist(resizeImage)
 
 # output_1 = cv.filter2D(blur, -1, kernel_1)
 
-cv.imshow("Output", resizeImage)
-cv.imshow("ShowHist", histoImage)
+# cv.imshow("Output", resizeImage)
+# cv.imshow("ShowHist", histoImage)
 
-cv.imshow("Color input image", resizeImage)
-cv.imshow("image output", imgOutput)
+# cv.imshow("Color input image", resizeImage)
+# cv.imshow("image output", imgOutput)
+
+plt.imshow(resizeImage, cmap='gray')
+plt.title("Show image plt")
+plt.show()
+
+print(resizeImage)
 
 cv.waitKey(0)
 cv.destroyAllWindows()
